@@ -1,0 +1,113 @@
+extraStrings:
+  - type: en-US
+    strings:
+      STR_NO_DAMAGE: "Roll: {0} Unharmed"
+      STR_TO_SHIELD: "Roll: {0} Shield: {1}"
+      STR_TO_HEALTH: "Roll: {0} Health: {1}"
+      STR_TO_ARMOR: "Roll: {0} Armor: {1}"
+      STR_TO_STUN: "Roll: {0} Stun: {1}"
+      STR_TO_ARMOR_STUN: "Roll: {0} Armor: {1} Stun: {2}"
+      STR_TO_HEALTH_ARMOR: "Roll: {0} Health: {1} Armor: {2}"
+      STR_TO_HEALTH_STUN: "Roll: {0} Health: {1} Stun: {2}"
+      STR_TO_HEALTH_ARMOR_STUN: "Roll: {0} Health: {1} Armor: {2} Stun: {3}"
+      STR_TO_ENERGY_MORALE_TIME: "Roll: {0} Energy: {1} Morale: {2} Time: {3}"
+
+  - type: ru
+    strings:
+      STR_NO_DAMAGE: "РОЛЛ: {0} НЕТ УРОНА"
+      STR_TO_SHIELD: "РОЛЛ: {0} ЩИТ: {1}"
+      STR_TO_HEALTH: "РОЛЛ: {0} УРОН ЗД: {1}"
+      STR_TO_ARMOR: "РОЛЛ: {0} УРОН БРОНЕ: {1}"
+      STR_TO_STUN: "РОЛЛ: {0} ОГЛУШЕНИЕ: {1}"
+      STR_TO_ARMOR_STUN: "РОЛЛ: {0} УРОН БРОНЕ: {1} ОГЛУШЕНИЕ: {2}"
+      STR_TO_HEALTH_ARMOR: "РОЛЛ: {0} УРОН ЗД: {1} УРОН БРОНЕ: {2}"
+      STR_TO_HEALTH_STUN: "РОЛЛ: {0} УРОН ЗД: {1} ОГЛУШЕНИЕ: {2}"
+      STR_TO_HEALTH_ARMOR_STUN: "РОЛЛ: {0} УРОН ЗД: {1} УРОН БРОНЕ: {2} ОГЛУШ: {3}"
+      STR_TO_ENERGY_MORALE_TIME: "РОЛЛ: {0} УРОН ЭНЕРГИИ: {1} УРОН МОРАЛИ: {2} УРОН ОД: {3}"
+
+extended:
+  tags:
+    BattleGame:
+      ROLL_VALUE: int
+
+  scripts:
+    hitUnit:
+      - new: oxce_hU_damageNotification
+        offset: 80
+        code: |
+          var int shieldHp;
+          var int health;
+
+          if eq power 0;
+            return power part side;
+          end;
+
+          unit.getHealth health;
+          if le health 0;
+            return power part side;
+          end;
+
+          unit.getTag shieldHp Tag.UNIT_ENERGY_SHIELD_HP;
+          if gt shieldHp 0;
+            battle_game.flashLongMessage "STR_TO_SHIELD" power shieldHp;
+          end;
+
+          battle_game.setTag Tag.ROLL_VALUE power;
+
+          return power part side;
+
+    damageUnit:
+      - new: oxce_dU_damageNotification
+        offset: 80
+        code: |
+          var int shieldHp;
+          var int health;
+          var int roll;
+
+          unit.getHealth health;
+          if le health 0;
+            return;
+          end;
+
+          if eq attacker null;
+            return;
+          end;
+
+          debug_log "Attacker:" attacker;
+          debug_log "Weapon:" damaging_item;
+          battle_game.getTag roll Tag.ROLL_VALUE;
+          unit.getTag shieldHp Tag.UNIT_ENERGY_SHIELD_HP;
+
+          if gt shieldHp 0;
+            battle_game.flashLongMessage "STR_TO_SHIELD" roll shieldHp;
+            debug_log "ROLL SHIELD" roll shieldHp;
+          else and neq to_health 0 eq to_armor 0 eq to_stun 0;
+            battle_game.flashLongMessage "STR_TO_HEALTH" roll to_health;
+            debug_log "ROLL HEALTH" roll to_health;
+          else and eq to_health 0 neq to_armor 0 eq to_stun 0;
+            battle_game.flashLongMessage "STR_TO_ARMOR" roll to_armor;
+            debug_log "ROLL ARMOR" roll to_armor;
+          else and eq to_health 0 eq to_armor 0 neq to_stun 0;
+            battle_game.flashLongMessage "STR_TO_STUN" roll to_stun;
+            debug_log "ROLL STUN" roll to_stun;
+          else and eq to_health 0 neq to_armor 0 neq to_stun 0;
+            battle_game.flashLongMessage "STR_TO_ARMOR_STUN" roll to_armor to_stun;
+            debug_log "ROLL ARMOR STUN" roll to_armor to_stun;
+          else and neq to_health 0 neq to_armor 0 eq to_stun 0;
+            battle_game.flashLongMessage "STR_TO_HEALTH_ARMOR" roll to_health to_armor;
+            debug_log "ROLL HEALTH ARMOR" roll to_health to_armor;
+          else and neq to_health 0 eq to_armor 0 neq to_stun 0;
+            battle_game.flashLongMessage "STR_TO_HEALTH_STUN" roll to_health to_stun;
+            debug_log "ROLL HEALTH STUN" roll to_health to_stun;
+          else or neq to_health 0 neq to_armor 0 neq to_stun 0;
+            battle_game.flashLongMessage "STR_TO_HEALTH_ARMOR_STUN" roll to_health to_armor to_stun;
+            debug_log "ROLL HEALTH ARMOR STUN" roll to_health to_armor to_stun;
+          else or neq to_energy 0 neq to_morale 0 neq to_time 0;
+            battle_game.flashLongMessage "STR_TO_ENERGY_MORALE_TIME" roll to_energy to_morale to_time;
+            debug_log "ROLL ENERGY MORALE TIME" roll to_energy to_morale to_time;
+          else;
+            battle_game.flashLongMessage "STR_NO_DAMAGE" roll;
+            debug_log "NO DAMAGE" roll;
+          end;
+
+          return;

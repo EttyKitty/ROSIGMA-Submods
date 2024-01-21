@@ -1,0 +1,135 @@
+armors:
+
+  - type: STR_PERSONAL_ARMOR_UC
+    layersDefinition:
+      M0: ["0", "TATICALM", ""]
+      M1: ["0", "TATICALM", ""]
+      M2: ["0", "TATICALM", ""]
+      M3: ["0", "TATICALM", ""]
+      M4: ["0", "TATICALM", ""]
+      M5: ["0", "TATICALM", ""]
+      F0: ["0", "TATICALF", ""]
+      F1: ["0", "TATICALF", ""]
+      F2: ["0", "TATICALF", ""]
+      F3: ["0", "TATICALF", ""]
+      F4: ["0", "TATICALF", ""]
+      F5: ["0", "TATICALF", ""]
+
+  - type: STR_DEV_ARMOR_UC
+    layersDefinition:
+      M0: ["0", "DEVASTATORM", ""]
+      M1: ["0", "DEVASTATORM", ""]
+      M2: ["0", "DEVASTATORM", ""]
+      M3: ["0", "DEVASTATORM", ""]
+      M4: ["0", "DEVASTATORM", ""]
+      M5: ["0", "DEVASTATORM", ""]
+      F0: ["0", "DEVASTATORF", ""]
+      F1: ["0", "DEVASTATORF", ""]
+      F2: ["0", "DEVASTATORF", ""]
+      F3: ["0", "DEVASTATORF", ""]
+      F4: ["0", "DEVASTATORF", ""]
+      F5: ["0", "DEVASTATORF", ""]
+
+  - type: STR_SCOUT_UC
+    layersSpecificPrefix:
+      1: SCOUTH
+      3: GOGGLES
+    layersDefinition:
+      M0: ["0", "AHSCOUTM", "M0_FACE", "GOGGLES"]
+      M1: ["0", "AHSCOUTM", "M1_FACE", "GOGGLES"]
+      M2: ["0", "AHSCOUTM", "M2_FACE", "GOGGLES"]
+      M3: ["0", "AHSCOUTM", "M3_FACE", "GOGGLES"]
+      M4: ["0", "AHSCOUTM", "M4_FACE", "GOGGLES"]
+      M5: ["0", "AHSCOUTM", "M5_FACE", "GOGGLES"]
+      F0: ["0", "AHSCOUTM", "F0_FACE", "GOGGLES"]
+      F1: ["0", "AHSCOUTM", "F1_FACE", "GOGGLES"]
+      F2: ["0", "AHSCOUTM", "F2_FACE", "GOGGLES"]
+      F3: ["0", "AHSCOUTM", "F3_FACE", "GOGGLES"]
+      F4: ["0", "AHSCOUTM", "F4_FACE", "GOGGLES"]
+      F5: ["0", "AHSCOUTM", "F5_FACE", "GOGGLES"]
+
+  - type: STR_MKX_TAC_LV1_UC #MKX
+    layersDefinition:
+      M0: ["0", "MKXLV1", ""]
+      M1: ["0", "MKXLV1", ""]
+      M2: ["0", "MKXLV1", ""]
+      M3: ["0", "MKXLV1", ""]
+      M4: ["0", "MKXLV1", ""]
+      M5: ["0", "MKXLV1", ""]
+      M6: ["0", "MKXLV1", ""]
+      F0: ["0", "MKXLV1", ""]
+      F1: ["0", "MKXLV1", ""]
+      F2: ["0", "MKXLV1", ""]
+      F3: ["0", "MKXLV1", ""]
+      F4: ["0", "MKXLV1", ""]
+      F5: ["0", "MKXLV1", ""]
+      F6: ["0", "MKXLV1", ""]
+  - type: STR_MKX_TAC_LV2_UC #MKX
+    layersDefinition:
+      M0: ["0", "MKXLV2", "", "MEDAL1"]
+      M1: ["0", "MKXLV2", "", "MEDAL1"]
+      M2: ["0", "MKXLV2", "", "MEDAL1"]
+      M3: ["0", "MKXLV2", "", "MEDAL1"]
+      M4: ["0", "MKXLV2", "", "MEDAL1"]
+      M5: ["0", "MKXLV2", "", "MEDAL2"]
+      M6: ["0", "MKXLV2", "", "MEDAL2"]
+      F0: ["0", "MKXLV2", "", "MEDAL2"]
+      F1: ["0", "MKXLV2", "", "MEDAL2"]
+      F2: ["0", "MKXLV2", "", "MEDAL3"]
+      F3: ["0", "MKXLV2", "", "MEDAL3"]
+      F4: ["0", "MKXLV2", "", "MEDAL3"]
+      F5: ["0", "MKXLV2", "", "MEDAL3"]
+      F6: ["0", "MKXLV2", "", "MEDAL3"]
+  - type: STR_MKX_TAC_LV3_UC #MKX
+    layersDefinition:
+      M0: ["0", "MKXLV3", "", "MEDAL1"]
+      M1: ["0", "MKXLV3", "", "MEDAL1"]
+      M2: ["0", "MKXLV3", "", "MEDAL1"]
+      M3: ["0", "MKXLV3", "", "MEDAL1"]
+      M4: ["0", "MKXLV3", "", "MEDAL1"]
+      M5: ["0", "MKXLV3", "", "MEDAL2"]
+      M6: ["0", "MKXLV3", "", "MEDAL2"]
+      F0: ["0", "MKXLV3", "", "MEDAL2"]
+      F1: ["0", "MKXLV3", "", "MEDAL2"]
+      F2: ["0", "MKXLV3", "", "MEDAL3"]
+      F3: ["0", "MKXLV3", "", "MEDAL3"]
+      F4: ["0", "MKXLV3", "", "MEDAL3"]
+      F5: ["0", "MKXLV3", "", "MEDAL3"]
+      F6: ["0", "MKXLV3", "", "MEDAL3"]
+  - type: STR_MKX_TAC_LV4_UC #MKX
+    layersDefinition:
+      M0: ["0", "MKXLV4", "", "MEDAL1"]
+      M1: ["0", "MKXLV4", "", "MEDAL1"]
+      M2: ["0", "MKXLV4", "", "MEDAL1"]
+      M3: ["0", "MKXLV4", "", "MEDAL1"]
+      M4: ["0", "MKXLV4", "", "MEDAL1"]
+      M5: ["0", "MKXLV4", "", "MEDAL2"]
+      M6: ["0", "MKXLV4", "", "MEDAL2"]
+      F0: ["0", "MKXLV4", "", "MEDAL2"]
+      F1: ["0", "MKXLV4", "", "MEDAL2"]
+      F2: ["0", "MKXLV4", "", "MEDAL3"]
+      F3: ["0", "MKXLV4", "", "MEDAL3"]
+      F4: ["0", "MKXLV4", "", "MEDAL3"]
+      F5: ["0", "MKXLV4", "", "MEDAL3"]
+      F6: ["0", "MKXLV4", "", "MEDAL3"]
+  - type: STR_MKX_TAC_LV5_UC #MKX
+    layersDefinition:
+      M0: ["CAPEP", "MKXLV5", "", "MEDAL1"]
+      M1: ["CAPEP", "MKXLV5", "", "MEDAL1"]
+      M2: ["CAPEP", "MKXLV5", "", "MEDAL1"]
+      M3: ["CAPEP", "MKXLV5", "", "MEDAL1"]
+      M4: ["CAPEP", "MKXLV5", "", "MEDAL1"]
+      M5: ["CAPEP", "MKXLV5", "", "MEDAL2"]
+      M6: ["CAPEP", "MKXLV5", "", "MEDAL2"]
+      F0: ["CAPEP", "MKXLV5", "", "MEDAL2"]
+      F1: ["CAPEP", "MKXLV5", "", "MEDAL2"]
+      F2: ["CAPEP", "MKXLV5", "", "MEDAL3"]
+      F3: ["CAPEP", "MKXLV5", "", "MEDAL3"]
+      F4: ["CAPEP", "MKXLV5", "", "MEDAL3"]
+      F5: ["CAPEP", "MKXLV5", "", "MEDAL3"]
+      F6: ["CAPEP", "MKXLV5", "", "MEDAL3"]
+
+items:
+  - type: STR_HEAVY_CANNON
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 0

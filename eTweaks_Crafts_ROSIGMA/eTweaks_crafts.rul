@@ -1,0 +1,25 @@
+extraStrings:
+  - type: en-US
+    strings:
+      STR_IMPULSOR: "IMPULSORS"
+
+crafts:
+  - type: STR_IMPULSOR
+    costBuy: 700000
+    costRent: 370000
+    soldiers: 12
+    deployment:
+      - [5, 3, 1, 0]
+      - [6, 3, 1, 0]
+      - [5, 4, 1, 0]
+      - [6, 4, 1, 0]
+      - [5, 5, 1, 0]
+      - [6, 6, 1, 0]
+      - [3, 13, 1, 0]
+      - [4, 13, 1, 0]
+      - [3, 14, 1, 0]
+      - [4, 14, 1, 0]
+      - [3, 15, 1, 0]
+      - [4, 16, 1, 0]
+    maxLargeUnits: 0
+    craftInventoryTile: [4,15,1]

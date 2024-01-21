@@ -1,0 +1,120 @@
+extended:
+  tags:
+    RuleSoldier:
+      SOLDIER_WOUND_TIME_MULTIPLIER: int
+
+  scripts:
+    returnFromMissionUnit:
+      # *** Delete vanilla 40k recovery handling ***
+      - delete: 40k_rFMU_reduce_wound_timer
+
+      # *** Recovery time calculation ***
+      - new: oxce_rFMU_recoveryTimeRevamped
+        offset: 10
+        code: |
+          var ptr RuleSoldier soldierRuleset;
+          var int woundTimeMultiplier;
+          var int HPmax;
+          var int HPfive;
+          var int totalHPlost;
+
+          # get HP lost, max HP and 5% of max HP
+          set totalHPlost health_loss;
+          unit.getHealthMax HPmax;
+          set HPfive HPmax;
+          div HPfive 20;
+
+          # if HP lost is less than 5% of max = no recovery
+          if lt totalHPlost HPfive;
+            set recovery_time 0;
+            return;
+          end;
+
+          # get woundTimeMultiplier
+          unit.getRuleSoldier soldierRuleset;
+          soldierRuleset.getTag woundTimeMultiplier Tag.SOLDIER_WOUND_TIME_MULTIPLIER;
+
+          # if HP lost is more or equal to max = 50 days recovery
+          if ge totalHPlost HPmax;
+            set recovery_time 50;
+          # use woundTimeMultiplier soldier buff
+            if neq 0 woundTimeMultiplier;
+              muldiv recovery_time woundTimeMultiplier 100;
+            end;
+            return;
+          end;
+
+          # if HP lost is more than 10% but less than 100%, recovery time = (%HPlost/2)
+          muldiv totalHPlost 100 HPmax;
+          div totalHPlost 2;
+          set recovery_time totalHPlost;
+          # use woundTimeMultiplier soldier buff
+          if neq 0 woundTimeMultiplier;
+            muldiv recovery_time woundTimeMultiplier 100;
+          end;
+
+          return;
+
+soldiers:
+  - update: STR_OGRYN
+    tags:
+      SOLDIER_WOUND_TIME_MULTIPLIER: 80
+
+  - update: STR_SOLDIER
+    tags: &SPACE_MARINE_RECOVERY
+      SOLDIER_WOUND_TIME_MULTIPLIER: 66
+  - update: STR_SOLDIER_JOAN
+    tags: *SPACE_MARINE_RECOVERY
+  - update: STR_GK_LV1
+    tags: *SPACE_MARINE_RECOVERY
+  - update: STR_GK_LV2
+    tags: *SPACE_MARINE_RECOVERY
+  - update: STR_GK_LV3
+    tags: *SPACE_MARINE_RECOVERY
+  - update: STR_GK_LV4
+    tags: *SPACE_MARINE_RECOVERY
+  - update: STR_GK_LV5
+    tags: *SPACE_MARINE_RECOVERY
+  # *** ROSIGMA ***
+  - update: STR_SOLDIER_TERMINATOR
+    tags: *SPACE_MARINE_RECOVERY
+
+  - update: STR_PRIMARISLV1
+    tags: &PRIMARIS_MARINE_RECOVERY
+      SOLDIER_WOUND_TIME_MULTIPLIER: 55
+  - update: STR_PRIMARISLV2
+    tags: *PRIMARIS_MARINE_RECOVERY
+  - update: STR_PRIMARISLV3
+    tags: *PRIMARIS_MARINE_RECOVERY
+  - update: STR_PRIMARISLV4
+    tags: *PRIMARIS_MARINE_RECOVERY
+  - update: STR_PRIMARISLV5
+    tags: *PRIMARIS_MARINE_RECOVERY
+
+  - update: STR_FALLEN
+    tags: &DREADNOUGHT_RECOVERY
+      SOLDIER_WOUND_TIME_MULTIPLIER: 33
+  
+items:
+  - &NO_HEALTH_REGEN
+    update: AUX_ADEPTAS_MEDI_KIT
+    healthRecovery: 0
+  - update: AUX_ELDAR_KIT
+    refNode: *NO_HEALTH_REGEN
+  - update: AUX_MEDI_KIT
+    refNode: *NO_HEALTH_REGEN
+  - update: AUX_SERVITOR_KIT
+    refNode: *NO_HEALTH_REGEN
+  - update: STR_GUARD_MEDI_KIT
+    refNode: *NO_HEALTH_REGEN
+  - update: STR_TANITH_MEDI_KIT
+    refNode: *NO_HEALTH_REGEN
+  # *** ROSIGMA ***
+  - update: AUX_MEDICAE_MEDI_KIT
+    refNode: *NO_HEALTH_REGEN
+  - update: AUX_MEDI_KIT_ADVANCED
+    refNode: *NO_HEALTH_REGEN
+  - update: AUX_MEDI_KIT_MC
+    refNode: *NO_HEALTH_REGEN
+  - update: STR_INQ_MEDI_KIT
+    refNode: *NO_HEALTH_REGEN

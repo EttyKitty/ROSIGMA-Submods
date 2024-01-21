@@ -1,0 +1,6 @@
+name: "Recovery Time Revamped"
+author: "Kzer-Za. Modified by EttyKitty"
+description: "Shorter recovery time, dependent on the health percentage lost by the soldier during combat."
+id: "recoveryTimeRevamped"
+version: "3.0"
+master: "*"

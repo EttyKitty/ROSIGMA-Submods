@@ -1,0 +1,5 @@
+name: "Damage Notification"
+description: "Flashes a message with damage values when a unit is hit"
+author: "Filip H. Modified by EttyKitty"
+id: "damageNotification"
+master: "*"

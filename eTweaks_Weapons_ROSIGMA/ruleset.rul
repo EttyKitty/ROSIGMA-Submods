@@ -1,0 +1,140 @@
+items:
+  - type: STR_PISTOL
+    weight: 5
+
+
+  - &STR_HEAVY_BOLTER
+    type: STR_AUTO_CANNON 
+    dropoff: 4
+    autoRange: 20 
+    snapRange: 20
+    aimRange: 0
+    accuracyAuto: 54
+    accuracySnap: 30 
+    accuracyAimed: 0
+    tuAuto: 78
+    tuSnap: 52
+    tuAimed: 0
+    confAuto:
+      name: "Braced Shot"
+      shortName: "Braced (x6)/20"
+      shots: 6
+    confSnap:
+      shots: 6
+    kneelBonus: 110
+
+  - type: STR_CSERVITOR_HB 
+    refNode: *STR_HEAVY_BOLTER
+  
+  - type: STR_HEAVY_BOLTER_CHAOSNURGLE 
+    refNode: *STR_HEAVY_BOLTER
+
+  - type: STR_AUTO_CANNON_CHAOSRETRIBUTOR 
+    refNode: *STR_HEAVY_BOLTER
+
+  - type: STR_BOLTER_HEAVY_SOLAR 
+    refNode: *STR_HEAVY_BOLTER
+
+
+  - &STR_MOUNTED_HEAVY_BOLTER
+    type: STR_MOUNTED_HEAVY_BOLTER 
+    refNode: *STR_HEAVY_BOLTER
+    tuSnap: 0
+    tuAimed: 0
+    kneelBonus: 100
+    confAuto:
+      name: "STR_AUTO_SHOT"
+      shortName: "STR_SHOT_TYPE_AUTO"
+
+  - type: AUX_BOLTER 
+    refNode: *STR_MOUNTED_HEAVY_BOLTER
+    costAuto:
+      energy: 5
+      time: 1
+
+
+  - &STR_SNIPER
+    type: STR_HEAVY_CANNON 
+    dropoff: 3
+    autoRange: 0
+    snapRange: 21
+    aimRange: 32
+    minRange: 11
+    accuracyAuto: 0
+    accuracySnap: 60
+    accuracyAimed: 108
+    tuAuto: 0
+    tuSnap: 52
+    tuAimed: 78
+    weight: 17
+
+  - type: STR_SNIPER_CHAOS
+    refNode: *STR_SNIPER
+
+  - type: STR_LONG_RIFLE_GUARD
+    refNode: *STR_SNIPER
+
+  - type: STR_SNIPER_CHAOS
+    refNode: *STR_SNIPER
+
+  - type: STR_HC_AP_AMMO
+    costBuy: 700
+    costSell: 350
+    clipSize: 6
+    damageAlter:
+      RandomType: 2
+
+  - type: STR_HC_HE_AMMO
+    costBuy: 800
+    costSell: 400
+    damageAlter:
+      RandomType: 2
+
+  - type: STR_HC_I_AMMO
+    costBuy: 800
+    costSell: 400
+    damageAlter:
+      RandomType: 2
+
+
+  - &STR_ROCKET_LAUNCHER
+    type: STR_ROCKET_LAUNCHER
+    dropoff: 4
+    autoRange: 32
+    snapRange: 0
+    aimRange: 32
+    accuracyAuto: 54
+    accuracySnap: 0
+    accuracyAimed: 98
+    tuAuto: 52
+    tuSnap: 0
+    tuAimed: 78
+    autoShots: 1
+    weight: 15
+  
+  - type: STR_CHAOS_ROCKET_LAUNCHER
+    refNode: *STR_ROCKET_LAUNCHER
+
+  - type: STR_NURGLE_ROCKET_LAUNCHER
+    refNode: *STR_ROCKET_LAUNCHER
+
+  - type: STR_CHAOS_LASCANNON_HANDHELD
+    refNode: *STR_ROCKET_LAUNCHER
+
+  - type: STR_SLAANESH_ROCKET_LAUNCHER
+    refNode: *STR_ROCKET_LAUNCHER
+
+  - type: STR_LARGE_ROCKET
+    costBuy: 1800
+    costSell: 900
+
+  - type: STR_SMALL_ROCKET
+    costBuy: 1200
+    costSell: 600
+
+  - type: STR_INCENDIARY_ROCKET
+    costBuy: 1600
+    costSell: 800
+    blastRadius: 2
+    damageAlter:
+      FixRadius: 0

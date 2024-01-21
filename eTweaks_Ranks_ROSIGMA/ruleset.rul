@@ -1,0 +1,61 @@
+soldiers:
+
+  - update: STR_SOLDIER_TERMINATOR
+    rankStrings:
+      - STR_TERMINATOR_RANK
+      - STR_TERMINATOR_RANK
+      - STR_TERMINATOR_RANK
+      - STR_TERMINATOR_RANK
+      - STR_TERMINATOR_RANK
+      - STR_TERMINATOR_RANK
+
+  - update: STR_FALLEN
+    rankStrings:
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+
+  - update: STR_FALLEN_GK
+    rankStrings:
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+      - STR_ANCIENT_RANK
+
+  - update: STR_SOLDIER
+    flagOffset: 1
+    rankStrings:
+      - STR_ROOKIE
+      - STR_SQUADDIE
+
+  - update: STR_PRIMARISLV1
+    flagOffset: 1
+  - update: STR_PRIMARISLV2
+    flagOffset: 1
+  - update: STR_PRIMARISLV3
+    flagOffset: 1
+  - update: STR_PRIMARISLV4
+    flagOffset: 1
+  - update: STR_PRIMARISLV5
+    flagOffset: 1
+
+extraStrings:
+  - type: en-US
+    strings:
+      STR_ROOKIE: "Neophyte"
+      STR_SQUADDIE: "Battle Brother"
+      # Special Ranks
+      STR_ANCIENT_RANK: "Ancient"
+      STR_TERMINATOR_RANK: "Veteran"
+      # Primaris Ranks
+      STR_PRIMARIS_RANK_0: "Newborn"
+      STR_PRIMARIS_RANK_1: "Primaris"
+      STR_PRIMARIS_RANK_2: "Sergeant"
+      STR_PRIMARIS_RANK_3: "Veteran"
+      STR_PRIMARIS_RANK_4: "Lieutenant"
+      STR_PRIMARIS_RANK_5: "Captain"

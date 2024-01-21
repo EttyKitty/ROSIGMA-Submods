@@ -1,0 +1,131 @@
+extraStrings:
+  - type: en-US
+    strings:
+      STR_LIVING_QUARTERS_MARINES: "Deathwatch Quarters"
+      # STR_LARGE_LIVING_QUARTERS_MARINES: "Deathwatch Quarters"
+
+
+research:
+  - name: STR_INQUISITION
+    unlocks:
+      - STR_RADICAL_INQUISITOR_STRATEGY
+      - STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH
+      - STR_SUMMON_IMPERIAL_AGENTS_RESEARCH
+      - STR_REQUEST_ARBITES_RESEARCH
+      - STR_REQUEST_GUARD_PILOTS_RESEARCH
+      - STR_REQUEST_KRIEG_KILLTEAM_RESEARCH
+      - STR_REQUEST_ADEPTAS_AID_RESEARCH
+      - STR_REQUEST_OGRYN_AID_RESEARCH
+      - STR_REQUEST_GUARD_AID_RESEARCH
+      - STR_INQ_STORMTROOPER_REQUISITION
+      - STR_LIGHT_BOLTERS
+      - STR_LIGHT_BOLTERS_LOWTIER
+      - STR_LIGHT_BOLTERS_MIDTIER
+
+startingBaseExperienced: # Chamber Militant
+  facilities:
+    - type: STR_ACCESS_LIFT
+      x: 0
+      y: 3
+    - type: STR_HANGAR
+      x: 0
+      y: 4
+    - type: STR_HANGAR
+      x: 2
+      y: 4
+    - type: STR_HANGAR
+      x: 4
+      y: 4
+    - type: STR_CORRIDOR
+      x: 1
+      y: 3
+    - type: STR_HANGAR
+      x: 4
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 1
+    - type: STR_GENERAL_STORES
+      x: 2
+      y: 1
+    - type: STR_LARGE_RADAR_SYSTEM
+      x: 1
+      y: 0
+    - type: STR_LABORATORY
+      x: 2
+      y: 0
+    - type: STR_ALIEN_CONTAINMENT
+      x: 3
+      y: 0
+    - type: STR_WORKSHOP
+      x: 4
+      y: 0
+
+events:
+  - name: STR_DEATHWATCH_CARE_PACKAGE
+    everyMultiItemList:
+      STR_CRATED_CORVUS: 1
+      STR_POWER_SUIT: 1
+      STR_ASSC: 1
+      STR_ASSC_CLIP: 5
+      STR_RIFLEB: 6
+      STR_RIFLE_CLIP: 12
+    spawnedPersons: 6
+
+facilities:
+  - type: STR_LIVING_QUARTERS_MARINES
+    requires:
+      - STR_DEATHWATCH
+    placeSound: {mod: 40k, index: 98}
+    requiresBaseFunc: [BASE]
+    provideBaseFunc: [IMPERIUM, ULTRA, IF, BA, SALA, BT, CF, DA, WS, SW]
+    spriteShape: 1
+    spriteFacility: 54
+    buildCost: 600000
+    buildTime: 16
+    monthlyCost: 15000
+    personnel: 25
+    mapName: XBASE_01
+    trainingRooms: 5
+
+  # - type: STR_LARGE_LIVING_QUARTERS_MARINES
+  #   requires:
+  #     - STR_MARINES_STRATEGY
+  #   placeSound: {mod: 40k, index: 98}
+  #   requiresBaseFunc: [BASE]
+  #   provideBaseFunc: [IMPERIUM, ULTRA, IF, BA, SALA, BT, CF, DA, WS, SW]
+  #   size: 2
+  #   buildCost: 1200000
+  #   buildTime: 20
+  #   monthlyCost: 30000
+  #   personnel: 100
+  #   trainingRooms: 20
+  #   storage: 50
+  #   mapName: XBASE_01
+  #   spriteShape: 55
+
+  - delete: STR_DW_QUARTERS_ULTRA
+  - delete: STR_DW_QUARTERS_IF
+  - delete: STR_DW_QUARTERS_BA
+  - delete: STR_DW_QUARTERS_SALA
+  - delete: STR_DW_QUARTERS_BT
+  - delete: STR_DW_QUARTERS_WS
+  - delete: STR_DW_QUARTERS_SW
+  - delete: STR_DW_QUARTERS_DA
+  - delete: STR_DW_QUARTERS_CF
+
+
+extraSprites:
+# ******************************************************
+# *************************** BASEBITS ***************************
+# ******************************************************
+  - type: BASEBITS.PCK
+    files:
+      54: Resources/Facilities/LIVING_QUARTERS_MARINES.png
+      55: Resources/Facilities/LARGE_LIVING_QUARTERS_MARINES_1.png
+      56: Resources/Facilities/LARGE_LIVING_QUARTERS_MARINES_2.png
+      57: Resources/Facilities/LARGE_LIVING_QUARTERS_MARINES_3.png
+      58: Resources/Facilities/LARGE_LIVING_QUARTERS_MARINES_4.png

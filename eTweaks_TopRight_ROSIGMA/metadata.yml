@@ -1,0 +1,6 @@
+id: etweaks_topright_rosigma
+name: "eTweaks: Top-Right Landing (ROSIGMA)"
+version: "1.0"
+description: "Player crafts now land only in the top-right corner. Works only on UFO and Terror missions. Experimental."
+author: "EttyKitty"
+master: "40k"

@@ -1,0 +1,33 @@
+soldiers:
+
+  - &SPACE_MARINE
+    type: STR_CHAOS_MARINE
+    soldierNames:
+      - delete
+      - Names/SpaceMarine.nam
+  - type: STR_CHAOS_MARINE_SLAANESH
+    refNode: *SPACE_MARINE
+  - type: STR_CHAOS_MARINE_NURGLE
+    refNode: *SPACE_MARINE
+  - type: STR_CHAOS_MARINE_TZEENTCH
+    refNode: *SPACE_MARINE
+  - type: STR_CHAOS_MARINE_KHORNE
+    refNode: *SPACE_MARINE
+  - type: STR_SOLDIER
+    refNode: *SPACE_MARINE
+  - type: STR_FALLEN
+    refNode: *SPACE_MARINE
+  - type: STR_SOLDIER_TERMINATOR
+    refNode: *SPACE_MARINE
+  - type: STR_PRIMARISLV1
+    refNode: *SPACE_MARINE
+  - type: STR_PRIMARISLV2
+    refNode: *SPACE_MARINE
+  - type: STR_PRIMARISLV3
+    refNode: *SPACE_MARINE
+  - type: STR_PRIMARISLV4
+    refNode: *SPACE_MARINE
+  - type: STR_PRIMARISLV5
+    refNode: *SPACE_MARINE
+  - type: STR_GK_LV1
+    refNode: *SPACE_MARINE
