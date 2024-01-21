@@ -74,6 +74,7 @@ extended:
           end;
 
           debug_log "Attacker:" attacker;
+          debug_log "Victim:" unit;
           debug_log "Weapon:" damaging_item;
           battle_game.getTag roll Tag.ROLL_VALUE;
           unit.getTag shieldHp Tag.UNIT_ENERGY_SHIELD_HP;
