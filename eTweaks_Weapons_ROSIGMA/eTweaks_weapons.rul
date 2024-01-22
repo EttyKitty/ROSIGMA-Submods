@@ -1,13 +1,48 @@
 items:
   - type: STR_PISTOL
-    weight: 5
+    weight: 6
+    snapRange: 8
 
+  - &BOLTPISTOL_CLIP
+    type: STR_PISTOL_CLIP
+    weight: 1
+    power: 68
+    damageAlter:
+      RandomType: 2
+  - type: STR_PISTOL_CLIP_EX
+    refNode: *BOLTPISTOL_CLIP
+  - type: STR_PISTOL_CLIP_AP
+    refNode: *BOLTPISTOL_CLIP
+  - type: STR_PISTOL_CLIP_MC
+    refNode: *BOLTPISTOL_CLIP
+
+  - &BOLTER
+    type: STR_RIFLE
+    weight: 14
+    tuAuto: 0
+    tuSnap: 30
+    confSnap:
+      shots: 2
+    snapRange: 16
+
+  - &BOLTER_CLIP
+    type: STR_RIFLE_CLIP
+    weight: 4
+    power: 74
+    damageAlter:
+      RandomType: 2
+  - type: STR_RIFLE_CLIP_EX
+    refNode: *BOLTER_CLIP
+  - type: STR_RIFLE_CLIP_AP
+    refNode: *BOLTER_CLIP 
+  - type: STR_RIFLE_CLIP_MC
+    refNode: *BOLTER_CLIP 
 
   - &STR_HEAVY_BOLTER
     type: STR_AUTO_CANNON 
     dropoff: 4
-    autoRange: 20 
-    snapRange: 20
+    autoRange: 24
+    snapRange: 24
     aimRange: 0
     accuracyAuto: 54
     accuracySnap: 30 
@@ -22,6 +57,7 @@ items:
     confSnap:
       shots: 6
     kneelBonus: 110
+    weight: 52
 
   - type: STR_CSERVITOR_HB 
     refNode: *STR_HEAVY_BOLTER
@@ -48,25 +84,38 @@ items:
 
   - type: AUX_BOLTER 
     refNode: *STR_MOUNTED_HEAVY_BOLTER
+    power: 80
     costAuto:
       energy: 5
       time: 1
 
+  - &HEAVYBOLTER_CLIP
+    type: STR_AC_AP_AMMO
+    weight: 16
+    power: 80
+    damageAlter:
+      RandomType: 2
+  - type: STR_AC_MC_AMMO
+    refNode: *HEAVYBOLTER_CLIP
+  - type: STR_AC_HE_AMMO
+    refNode: *HEAVYBOLTER_CLIP
+  - type: STR_AC_I_AMMO
+    refNode: *HEAVYBOLTER_CLIP
 
   - &STR_SNIPER
     type: STR_HEAVY_CANNON 
-    dropoff: 3
+    dropoff: 4
     autoRange: 0
-    snapRange: 21
+    snapRange: 22
     aimRange: 32
-    minRange: 11
+    minRange: 16
     accuracyAuto: 0
     accuracySnap: 60
     accuracyAimed: 108
     tuAuto: 0
     tuSnap: 52
     tuAimed: 78
-    weight: 17
+    weight: 8
 
   - type: STR_SNIPER_CHAOS
     refNode: *STR_SNIPER
@@ -77,7 +126,9 @@ items:
   - type: STR_SNIPER_CHAOS
     refNode: *STR_SNIPER
 
-  - type: STR_HC_AP_AMMO
+  - &SNIPER_CLIP
+    type: STR_HC_AP_AMMO
+    weight: 2
     costBuy: 700
     costSell: 350
     clipSize: 6
@@ -85,22 +136,20 @@ items:
       RandomType: 2
 
   - type: STR_HC_HE_AMMO
+    refNode: *SNIPER_CLIP
     costBuy: 800
     costSell: 400
-    damageAlter:
-      RandomType: 2
 
   - type: STR_HC_I_AMMO
+    refNode: *SNIPER_CLIP
     costBuy: 800
     costSell: 400
-    damageAlter:
-      RandomType: 2
 
 
-  - &STR_ROCKET_LAUNCHER
+  - &MISSILE_LAUNCHER
     type: STR_ROCKET_LAUNCHER
-    dropoff: 4
-    autoRange: 32
+    dropoff: 5
+    autoRange: 22
     snapRange: 0
     aimRange: 32
     accuracyAuto: 54
@@ -110,31 +159,35 @@ items:
     tuSnap: 0
     tuAimed: 78
     autoShots: 1
-    weight: 15
+    weight: 35
   
   - type: STR_CHAOS_ROCKET_LAUNCHER
-    refNode: *STR_ROCKET_LAUNCHER
+    refNode: *MISSILE_LAUNCHER
 
   - type: STR_NURGLE_ROCKET_LAUNCHER
-    refNode: *STR_ROCKET_LAUNCHER
-
-  - type: STR_CHAOS_LASCANNON_HANDHELD
-    refNode: *STR_ROCKET_LAUNCHER
+    refNode: *MISSILE_LAUNCHER
 
   - type: STR_SLAANESH_ROCKET_LAUNCHER
-    refNode: *STR_ROCKET_LAUNCHER
+    refNode: *MISSILE_LAUNCHER
 
-  - type: STR_LARGE_ROCKET
+  - &MISSILE
+    type: STR_LARGE_ROCKET
+    weight: 2
     costBuy: 1800
     costSell: 900
+    damageAlter:
+      RandomType: 2
 
   - type: STR_SMALL_ROCKET
+    refNode: *MISSILE
     costBuy: 1200
     costSell: 600
+    damageAlter:
+      RandomType: 1
 
   - type: STR_INCENDIARY_ROCKET
+    refNode: *MISSILE
     costBuy: 1600
     costSell: 800
-    blastRadius: 2
     damageAlter:
       FixRadius: 0
