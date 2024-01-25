@@ -28,7 +28,7 @@ items:
   - &BOLTER_CLIP
     type: STR_RIFLE_CLIP
     weight: 4
-    power: 74
+    power: 75
     damageAlter:
       RandomType: 2
   - type: STR_RIFLE_CLIP_EX
@@ -84,7 +84,7 @@ items:
 
   - type: AUX_BOLTER 
     refNode: *STR_MOUNTED_HEAVY_BOLTER
-    power: 80
+    power: 85
     costAuto:
       energy: 5
       time: 1
@@ -92,7 +92,7 @@ items:
   - &HEAVYBOLTER_CLIP
     type: STR_AC_AP_AMMO
     weight: 16
-    power: 80
+    power: 85
     damageAlter:
       RandomType: 2
   - type: STR_AC_MC_AMMO
@@ -106,15 +106,21 @@ items:
     type: STR_HEAVY_CANNON 
     dropoff: 4
     autoRange: 0
-    snapRange: 22
-    aimRange: 32
+    snapRange: 32
+    aimRange: 22
     minRange: 16
     accuracyAuto: 0
-    accuracySnap: 60
-    accuracyAimed: 108
+    accuracySnap: 108
+    accuracyAimed: 60
     tuAuto: 0
-    tuSnap: 52
-    tuAimed: 78
+    tuSnap: 78
+    tuAimed: 52
+    confAimed:
+      name: STR_SNAP_SHOT
+      shortName: STR_SHOT_TYPE_SNAP
+    confSnap:
+      name: STR_AIMED_SHOT
+      shortName: STR_SHOT_TYPE_AIMED
     weight: 8
 
   - type: STR_SNIPER_CHAOS
@@ -175,6 +181,7 @@ items:
     weight: 2
     costBuy: 1800
     costSell: 900
+    power: 125
     damageAlter:
       RandomType: 2
 
@@ -182,6 +189,7 @@ items:
     refNode: *MISSILE
     costBuy: 1200
     costSell: 600
+    power: 90
     damageAlter:
       RandomType: 1
 
@@ -190,4 +198,4 @@ items:
     costBuy: 1600
     costSell: 800
     damageAlter:
-      FixRadius: 0
+      FixRadius: 2
