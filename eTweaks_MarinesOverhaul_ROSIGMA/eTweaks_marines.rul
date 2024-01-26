@@ -266,9 +266,8 @@ armors:
       - STR_SCOUT_SOLDIER
       - STR_DEVASTATOR_SOLDIER
       - STR_ASSAULT_SOLDIER
-    builtInWeapons:
-      - STR_MEDICAE_POUCH
-  
+    specialWeapon: STR_MEDICAE_POUCH   
+
   - update: STR_SCOUTH_UC
     refNode: *SCOUT_ARMOR
     builtInWeapons:
@@ -348,13 +347,13 @@ manufacture:
 items:
   - type: STR_MEDICAE_POUCH
     battleType: 6
-    woundRecovery: 2
+    woundRecovery: 1
     healthRecovery: 0
     stunRecovery: 5
     energyRecovery: 5
-    painKiller: 3
+    painKiller: 6
     heal: 6
-    stimulant: 3
+    stimulant: 6
     medikitTargetSelf: true
     isConsumable: true
     costUse:
@@ -362,12 +361,19 @@ items:
     recover: false
     specialUseEmptyHand: true
     specialIconSprite: {mod: 40k, index: 100}
+    tags:
+      MEDKIT_TYPE: 1
 
   - type: STR_MK7_CORPSE
     recover: true
     size: 1
     recoveryPoints: 5
     ignoreInBaseDefense: true
+
+ufopaedia:
+  - id: STR_MEDICAE_POUCH
+    type_id: 4
+    section: STR_NOT_AVAILABLE
 
 commendations:
   - type: STR_MEDAL_KILLS_TOTAL
