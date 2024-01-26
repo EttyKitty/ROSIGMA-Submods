@@ -1,6 +1,6 @@
 soldierTransformation:
   - &ASTARTES_PROMOTION
-    name: STR_PROMOTION_DEVASTATOR
+    name: STR_DEVASTATOR_PROMOTION
     requires:
       - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
@@ -17,7 +17,7 @@ soldierTransformation:
     requiredCommendations:
       STR_MEDAL_STATGAIN: 3
 
-  - name: STR_PROMOTION_ASSAULT
+  - name: STR_ASSAULT_PROMOTION
     refNode: *ASTARTES_PROMOTION
     requires: !add
       - STR_ASS_ARMOR
@@ -28,7 +28,7 @@ soldierTransformation:
     requiredMinStats:
       firing: 90
 
-  - name: STR_PROMOTION_TACTICAL
+  - name: STR_TACTICAL_PROMOTION
     refNode: *ASTARTES_PROMOTION
     producedSoldierType: STR_SOLDIER
     allowedSoldierTypes:
@@ -36,7 +36,7 @@ soldierTransformation:
     requiredMinStats:
       melee: 90
 
-  - name: STR_PROMOTION_STERNGUARD
+  - name: STR_STERNGUARD_PROMOTION
     refNode: *ASTARTES_PROMOTION
     requires: !add 
       - STR_HONOR_ARMOR
@@ -48,7 +48,7 @@ soldierTransformation:
     requiredMinStats:
       firing: 110
 
-  - name: STR_PROMOTION_VANGUARD
+  - name: STR_VANGUARD_PROMOTION
     refNode: *ASTARTES_PROMOTION
     requires: !add 
       - STR_HONOR_ARMOR_RESEARCH
@@ -60,7 +60,7 @@ soldierTransformation:
     requiredMinStats:
       melee: 110
 
-  - name: STR_PROMOTION_TERMINATOR
+  - name: STR_PROMOTE_TERMINATOR
     refNode: *ASTARTES_PROMOTION
     requires: !add 
       - STR_POWER_SUIT
@@ -68,7 +68,7 @@ soldierTransformation:
       STR_KILLPOINT_TOKEN: 180
       STR_POWER_SUIT: 1
 
-  - name: STR_PROMOTION_CAPTAIN
+  - name: STR_CAPTAIN_PROMOTION
     refNode: *ASTARTES_PROMOTION
     requires: !add
       - STR_CAPTAIN_SUIT
@@ -84,7 +84,7 @@ soldierTransformation:
       bravery: 100
 
   - &ASTARTES_OFFICERS
-    name: STR_PROMOTION_APOTHECARY
+    name: STR_APOTHECARY_PROMOTION
     refNode: *ASTARTES_PROMOTION
     requires: !add
       - STR_APOC_BAY
@@ -97,7 +97,7 @@ soldierTransformation:
     requiredItems: !add
       STR_KILLPOINT_TOKEN: 120
 
-  - name: STR_PROMOTION_TECHMARINE
+  - name: STR_TECHMARINE_PROMOTION
     refNode: *ASTARTES_OFFICERS
     requires: !add
       - STR_TEC_BAYR
@@ -823,10 +823,15 @@ extraStrings:
 # ******************************************************
 # *************************** TRANSFORMATIONS ***************************
 # ******************************************************
-      STR_PROMOTION_DEVASTATOR: "Devastator Training"
-      STR_PROMOTION_ASSAULT: "Assault Training"
-      STR_PROMOTION_TACTICAL: "Tactical Training"
-
+      STR_DEVASTATOR_PROMOTION: "Devastator Training"
+      STR_ASSAULT_PROMOTION: "Assault Training"
+      STR_TACTICAL_PROMOTION: "Tactical Training"
+      STR_STERNGUARD_PROMOTION: "Promote to Sternguard"
+      STR_VANGUARD_PROMOTION: "Promote to Vanguard"
+      STR_PROMOTE_TERMINATOR: "Award Terminator Armor"
+      STR_CAPTAIN_PROMOTION: "Promote to Captain"
+      STR_APOTHECARY_PROMOTION: "Apothecary Training"
+      STR_TECHMARINE_PROMOTION: "Techmarine Training"
   ########################################################## eTweaks COMMENDATIONS ##########################################################
 
       STR_MEDAL_KILLS_TOTAL: "Executor"
