@@ -1,0 +1,180 @@
+soldiers:
+  - type: STR_SOLDIER
+    requires: !add
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+  - type: STR_PRIMARISLV1
+    requires: !add
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+
+events:
+  - name: STR_PRIMARIS_CARE_PACKAGE
+    spawnedPersons: 16
+
+  - name: STR_SCOUT_CARE_PACKAGE
+    spawnedPersons: 16
+
+startingBase: # Space Marines
+  facilities:
+    - type: STR_ACCESS_LIFT
+      x: 0
+      y: 3
+    - type: STR_HANGAR
+      x: 0
+      y: 4
+    - type: STR_HANGAR
+      x: 2
+      y: 4
+    - type: STR_HANGAR
+      x: 4
+      y: 4
+    - type: STR_CORRIDOR
+      x: 1
+      y: 3
+    - type: STR_HANGAR
+      x: 4
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 1
+    - type: STR_GENERAL_STORES
+      x: 2
+      y: 1
+    - type: STR_LARGE_RADAR_SYSTEM
+      x: 1
+      y: 0
+    - type: STR_LABORATORY
+      x: 2
+      y: 0
+    - type: STR_ALIEN_CONTAINMENT
+      x: 3
+      y: 0
+    - type: STR_WORKSHOP
+      x: 4
+      y: 0
+  randomSoldiers: {}
+
+startingBaseExperienced: # Chamber Militant
+  facilities:
+    - type: STR_ACCESS_LIFT
+      x: 0
+      y: 3
+    - type: STR_HANGAR
+      x: 0
+      y: 4
+    - type: STR_HANGAR
+      x: 2
+      y: 4
+    - type: STR_HANGAR
+      x: 4
+      y: 4
+    - type: STR_CORRIDOR
+      x: 1
+      y: 3
+    - type: STR_HANGAR
+      x: 4
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 1
+    - type: STR_GENERAL_STORES
+      x: 2
+      y: 1
+    - type: STR_LARGE_RADAR_SYSTEM
+      x: 1
+      y: 0
+    - type: STR_LABORATORY
+      x: 2
+      y: 0
+    - type: STR_ALIEN_CONTAINMENT
+      x: 3
+      y: 0
+    - type: STR_WORKSHOP
+      x: 4
+      y: 0
+
+startingBaseGenius: # Sisters of Battle
+  facilities:
+    - type: STR_ACCESS_LIFT
+      x: 0
+      y: 3
+    - type: STR_HANGAR
+      x: 0
+      y: 4
+    - type: STR_HANGAR
+      x: 2
+      y: 4
+    - type: STR_HANGAR
+      x: 4
+      y: 4
+    - type: STR_CORRIDOR
+      x: 1
+      y: 3
+    - type: STR_HANGAR
+      x: 4
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 1
+    - type: STR_GENERAL_STORES
+      x: 2
+      y: 1
+    - type: STR_LARGE_RADAR_SYSTEM
+      x: 1
+      y: 0
+    - type: STR_LABORATORY
+      x: 2
+      y: 0
+    - type: STR_ALIEN_CONTAINMENT
+      x: 3
+      y: 0
+    - type: STR_WORKSHOP
+      x: 4
+      y: 0
+
+startingBaseSuperhuman: # Sisters of Battle
+  facilities:
+    - type: STR_ACCESS_LIFT
+      x: 0
+      y: 3
+    - type: STR_HANGAR
+      x: 0
+      y: 4
+    - type: STR_HANGAR
+      x: 2
+      y: 4
+    - type: STR_HANGAR
+      x: 4
+      y: 4
+    - type: STR_CORRIDOR
+      x: 1
+      y: 3
+    - type: STR_GUARD_BARRACKS
+      x: 1
+      y: 2
+    - type: STR_LIVING_QUARTERS
+      x: 1
+      y: 1
+    - type: STR_GENERAL_STORES
+      x: 2
+      y: 1
+    - type: STR_LARGE_RADAR_SYSTEM
+      x: 1
+      y: 0
+    - type: STR_LABORATORY
+      x: 2
+      y: 0
+    - type: STR_ALIEN_CONTAINMENT
+      x: 3
+      y: 0
+    - type: STR_WORKSHOP
+      x: 4
+      y: 0

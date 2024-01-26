@@ -1,0 +1,212 @@
+extraStrings:
+  - type: en-US
+    strings:
+      STR_DEPLOYABLE_SENSOR_ITEM: "Deployable Sensor"
+      STR_DEPLOYABLE_SENSOR_UNIT: "Sensor Pylon"
+      STR_DEPLOYABLE_SENSOR_CORPSE: "Broken Sensor Pylon"
+      STR_DEPLOYABLE_SENSOR_ARMOR: "Sensor Pylon"
+
+      STR_DEPLOY_SENSOR_TEXT: "Deploy"
+
+      STR_DEPLOYABLE_SENSOR_UFOPEDIA: "{NEWLINE} Deployable Sensor capable of detecting targets even through walls in a 6 units radius. Cannot be repositioned once deployed onto the ground. It becomes active on next turn after deployment.{NEWLINE}{NEWLINE}{ALT}Can be recovered after battle if not destroyed."
+      STR_DEPLOYABLE_SENSOR_ARMOR_UFOPEDIA: "{NEWLINE} Sensor capable of detecting targets even through walls in a 6 units radius.{NEWLINE}{NEWLINE}{ALT}Can be recovered after battle if not destroyed."
+
+
+items:
+  - type: STR_DEPLOYABLE_SENSOR_ITEM
+    size: 0.2
+    costBuy: 20000
+    costSell: 10000
+    requiresBuy:
+      - STR_MOTION_SCANNER
+    weight: 8
+    transferTime: 48
+    bigSprite: 100
+    floorSprite: 100
+    handSprite: 100
+    bulletSpeed: -2
+    hitAnimation: -1
+    power: 20
+    hidePower: true
+    damageType: 3
+    accuracySnap: 100
+    accuracyMultiplier:
+      flatHundred: 1.0
+      firing: 0.0
+    costSnap:
+      time: 50
+    flatSnap:
+      time: false
+    confSnap:
+      name: STR_DEPLOY_SENSOR_TEXT
+      shortName: STR_DEPLOY_SENSOR_TEXT
+    blastRadius: 0
+    costThrow:
+      time: 30
+      energy: 18
+    flatThrow:
+      time: false
+      energy: true
+    maxRange: 1
+    snapRange: 1
+    dropoff: 100
+    powerRangeReduction: 999
+    battleType: 1
+    clipSize: 1
+    arcingShot: true
+    invWidth: 1
+    invHeight: 3
+    landOnly: true
+    spawnUnit: STR_DEPLOYABLE_SENSOR_UNIT
+    spawnUnitFaction: 0
+    listOrder: 46290
+
+  - type: STR_DEPLOYABLE_SENSOR_CORPSE
+    size: 0.4
+    costSell: 4200
+    weight: 9
+    bigSprite: 101
+    floorSprite: 101
+    handSprite: 101
+    invWidth: 2
+    invHeight: 2
+    battleType: 11
+    armor: 5
+    recover: false
+    listOrder: 70220
+
+
+units:
+  - type: STR_DEPLOYABLE_SENSOR_UNIT
+    race: STR_DEPLOYABLE_SENSOR_UNIT
+    stats:
+      tu: 20
+      stamina: 0
+      health: 20
+      bravery: 110
+      reactions: 10
+      firing: 0
+      throwing: 0
+      strength: 10
+      psiStrength: 100
+      psiSkill: 0
+      melee: 0
+    armor: STR_DEPLOYABLE_SENSOR_ARMOR
+    standHeight: 8
+    kneelHeight: 8
+    floatHeight: 8
+    value: 0
+    canSurrender: true
+    autoSurrender: true
+    cosmetic: true
+    livingWeapon: true
+    moraleLossWhenKilled: 0
+    civilianRecoveryType: STR_DEPLOYABLE_SENSOR_ITEM
+
+
+armors:
+  - type: STR_DEPLOYABLE_SENSOR_ARMOR
+    spriteSheet: DEPLOYABLE_SENSOR.PCK
+    spriteInv: DEPLOYABLE_SENSOR_INV
+    allowInv: false
+    corpseBattle: 
+      - STR_DEPLOYABLE_SENSOR_CORPSE
+    visibilityAtDark: 0
+    visibilityAtDay: 0
+    psiVision: 6
+    psiCamouflage: -100
+    camouflageAtDay: -6
+    camouflageAtDark: -6
+    personalLight: 0
+    frontArmor: 5
+    sideArmor: 5
+    rearArmor: 5
+    underArmor: 5
+    fearImmune: true
+    bleedImmune: true
+    painImmune: true
+    zombiImmune: true
+    drawingRoutine: 16
+    overKill: 1.5
+    psiDefence:
+      flatHundred: 10.0
+    loftempsSet: [ 3 ]
+    createsMeleeThreat: false
+    allowsKneeling: false
+    instantWoundRecovery: true
+    alwaysVisible: true
+    allowsMoving: false
+    scripts:
+      selectUnitSprite: |
+        var int temp;
+        var int collapsing;
+        var int walking;
+        unit.isCollapsing collapsing;
+        unit.isWalking walking;
+        if and eq walking 0 eq collapsing 0;
+          unit.getId temp;
+          offsetmod temp 11 0 8; #desync animation of different units #temp = ((temp * 11) + 0) % 8
+          add temp anim_frame; #temp = temp + anim_frame
+          wavegen_saw temp 8 8 7; #Saw wave function, temp - argument and result, 8 - period, 8 - size of saw, 7 - cap value
+          set sprite_offset temp;  #sprite_offset = temp
+          set sprite_index sprite_offset; #sprite_index = sprite_offset
+        else;
+          add sprite_index sprite_offset; #sprite_index = sprite_index + sprite_offset
+        end;
+        return sprite_index; 
+
+
+ufopaedia:
+
+  - id: STR_DEPLOYABLE_SENSOR_ITEM
+    requires:
+      - STR_MOTION_SCANNER
+    type_id: 14
+    image_id: 1MS.SPK
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_DEPLOYABLE_SENSOR_UFOPEDIA
+    listOrder: 90000
+
+  - id: STR_DEPLOYABLE_SENSOR_ARMOR
+    requires:
+      - STR_MOTION_SCANNER
+    type_id: 15
+    image_id: 1MS.SPK
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_DEPLOYABLE_SENSOR_ARMOR_UFOPEDIA
+    listOrder: 90001
+
+
+extraSprites:
+  - type: BIGOBS.PCK
+    files:
+      100: Resources/bigob_XComMarkerFolded.png
+      101: Resources/bigob_XComMarkerCorpse.png
+
+
+  - type: FLOOROB.PCK
+    files:
+      100: Resources/floorob_XComMarkerFolded.png
+      101: Resources/floorob_XComMarkerCorpse.png
+
+  - type: HANDOB.PCK
+    height: 40
+    width: 256
+    subX: 32
+    subY: 40
+    files:
+      100: Resources/handob_XComMarkerFolded.png
+      101: Resources/handob_XComMarkerCorpse.png
+
+  - type: DEPLOYABLE_SENSOR.PCK
+    width: 256
+    height: 80
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/XComMarker.png
+
+  - type: DEPLOYABLE_SENSOR_INV
+    singleImage: true
+    files:
+      0: Resources/inventory_XComMarker.png

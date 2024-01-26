@@ -1,0 +1,47 @@
+﻿facilities:
+
+  - type: STR_ACCESS_LIFT
+    storageTiles:
+      - [8, 2, 1]
+    storage: 10
+    labs: 5
+
+  - type: STR_HANGAR
+    workshops: 5
+    storage: 10
+    buildTime: 28
+  
+  - type: STR_WORKSHOP
+    workshops: 25
+    storage: 10
+    buildTime: 21
+    buildCost: 400000
+    refundValue: 200000
+  
+  - type: STR_LABORATORY
+    storage: 10
+    buildTime: 21
+
+  - type: STR_TRAINFACILITY
+    storage: 20
+    buildTime: 21
+
+  # - type: STR_HANGAR_SMALL
+  #   requiresBaseFunc: [BASE]
+  #   provideBaseFunc: [HANGAR, IMPERIUM]
+  #   spriteShape: {mod: 40k, index: 9}
+  #   spriteFacility: {mod: 40k, index: 9}
+  #   size: 2
+  #   buildCost: 200000
+  #   buildTime: 1
+  #   monthlyCost: 25000
+  #   crafts: 2
+  #   mapName: XBASE_16
+  #   hangarType: 0
+  #   craftSlots:
+  #     - [10, -10, 0]
+  #     - [-5, 5, 0]
+
+  - type: STR_LIVING_QUARTERS
+    storage: 10
+    buildTime: 14

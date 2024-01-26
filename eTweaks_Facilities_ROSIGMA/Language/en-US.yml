@@ -1,0 +1,27 @@
+en-US:
+# ******************************************************
+# *************************** FACILITIES ***************************
+# ******************************************************
+  STR_LIVING_QUARTERS: "Dormitory"
+  STR_LIVING_QUARTERS_MARINES: "Chapter Quarters"
+  STR_LARGE_LIVING_QUARTERS_MARINES: "Large Chapter Quarters"
+  STR_WORKSHOP: "Foundry"
+  STR_SMALL_RADAR_SYSTEM: "Weak Radar System"
+  STR_LARGE_RADAR_SYSTEM: "Strong Radar System"
+  STR_GENERAL_STORES: "General Storage"
+  STR_ALIEN_CONTAINMENT: "Dungeon"
+
+# ******************************************************
+# *************************** FACILITIES UFOPAEDIA ***************************
+# ******************************************************
+  STR_ACCESS_LIFT_UFOPEDIA: "{NEWLINE} The access lift allows equipment and personnel to be transferred into or out of an underground base. It is always the first facility to be constructed on a new site. The lift area is vulnerable to intrusion from any potential hostile force."
+  STR_LIVING_QUARTERS_UFOPEDIA: "{NEWLINE} The facility provides basic recreation, food and sleeping areas. Each accommodation block provides for up to {ALT}50{ALT} personnel. {ALT}5{ALT} soldiers can also train here. Provides {ALT}10{ALT} units of storage space."
+  STR_WORKSHOP_UFOPEDIA: "{NEWLINE} A workshop contains all the equipment necessary to manufacture equipment based on designs from your adepts. Up to {ALT}25{ALT} servitors can occupy a single workshop, although items under construction will also consume some space. Provides {ALT}10{ALT} units of storage space."
+  STR_SMALL_RADAR_SYSTEM_UFOPEDIA: "{NEWLINE} A small detection system has an effective radar range of {ALT}300{ALT} nautical miles and is linked to satellite systems for ground search. Each system has a {ALT}10%{ALT} chance of detecting an average sized object every 30 minutes."
+  STR_LARGE_RADAR_SYSTEM_UFOPEDIA: "{NEWLINE} A large detection system has an effective range of {ALT}450{ALT} nautical miles and is linked to satellite systems for ground search. Each system has a {ALT}20%{ALT} chance of detecting an average sized object every 30 minutes."
+  STR_MISSILE_DEFENSES_UFOPEDIA: "{NEWLINE} Missile defenses provide some protection against incursion by hostile craft which are attempting to assault the base."
+  STR_GENERAL_STORES_UFOPEDIA: "{NEWLINE} All equipment, weapons systems, munitions, recovered material and Heavy Weapons Platforms are placed in stores, including equipment assigned to craft in hangars. Up to {ALT}100{ALT} units of equipment can be stored here."
+  STR_ALIEN_CONTAINMENT_UFOPEDIA: "{NEWLINE} Live xenos and agents of Chaos must be detained in secure cells prior to the completion of their interrogation. This facility provides {ALT}10{ALT} self-contained units for this purpose."
+  STR_TRAINFACILITY_UFOPEDIA: "{NEWLINE} This facility allows us to train up to {ALT}20{ALT} soldiers at a time. Provides {ALT}20{ALT} units of storage space."
+  STR_LABORATORY_UFOPEDIA: "{NEWLINE} This facility allows adepts to conduct research, identify artifacts, and apply for requisitions. Up to {ALT}25{ALT} adepts can occupy a single laboratory. Provides {ALT}10{ALT} units of storage space."
+  STR_HANGAR_UFOPEDIA: "{NEWLINE} Each hangar can accommodate one craft. It contains space for maintenance, refueling and repair of any type of craft. Each craft stationed at a base must have a free hangar assigned to it which cannot be used by other crafts, even if the assigned craft is out on a mission. Provides {ALT}25{ALT} units of storage space and {ALT}10{ALT} workshop slots."
