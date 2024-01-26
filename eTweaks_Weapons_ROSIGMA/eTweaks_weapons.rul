@@ -33,6 +33,15 @@ items:
       RandomType: 2
   - type: STR_RIFLE_CLIP_EX
     refNode: *BOLTER_CLIP
+    power: 35
+    blastRadius: 0
+    hitAnimation: 26
+    shotgunPellets: 6
+    shotgunBehavior: 1
+    shotgunSpread: 60
+    damageAlter:
+      ToHealth: 1.1
+      RandomType: 1
   - type: STR_RIFLE_CLIP_AP
     refNode: *BOLTER_CLIP 
   - type: STR_RIFLE_CLIP_MC
