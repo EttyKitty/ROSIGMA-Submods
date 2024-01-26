@@ -1,0 +1,106 @@
+items:
+
+  - update: STR_GRENADE
+    invWidth: 1
+    invHeight: 1
+
+  - &DEFAULT_GRENADE
+    update: STR_GRENADE
+    throwRange: 4
+    fuseType: -1
+    tuPrime: 2
+    tuUnprime: 2
+    tuThrow: 45
+
+  - update: STR_KRAK_GRENADE 
+    refNode: *DEFAULT_GRENADE
+    invWidth: 1
+    invHeight: 1
+
+  - update: STR_PHOSPHOR_GRENADE
+    refNode: *DEFAULT_GRENADE
+
+  - update: STR_SMOKE_GRENADE
+    refNode: *DEFAULT_GRENADE            
+    throwRange: 6
+    invWidth: 1
+    invHeight: 1
+
+  - update: STR_HOLOGRAM_GRENADE
+    refNode: *DEFAULT_GRENADE  
+    invWidth: 1
+    invHeight: 1
+
+  - update: STR_SCARE_GRENADE 
+    refNode: *DEFAULT_GRENADE  
+    damageType: 9
+
+  - update: STR_SONIC_GRENADE
+    refNode: *DEFAULT_GRENADE  
+
+  - update: STR_MAKESHIFT_GRENADE
+    refNode: *DEFAULT_GRENADE  
+
+  - update: STR_MAKESHIFT_PIPEBOMB
+    refNode: *DEFAULT_GRENADE  
+
+  - update: STR_ELDAR_GRENADE
+    refNode: *DEFAULT_GRENADE  
+
+  - update: STR_MGRENADE
+    refNode: *DEFAULT_GRENADE  
+    invWidth: 1
+    invHeight: 2
+
+  - update: STR_HIGH_EXPLOSIVE
+    tuPrime: 2
+    tuUnprime: 2
+    tuThrow: 65
+    throwRange: 2
+    invWidth: 2
+    invHeight: 2
+
+  - update: STR_ELDAR_MGRENADE
+    refNode: *DEFAULT_GRENADE  
+
+  - update: STR_PHOTON_GRENADE
+    refNode: *DEFAULT_GRENADE  
+    invWidth: 1
+    invHeight: 1
+
+  - update: STR_ALIEN_GRENADE
+    refNode: *DEFAULT_GRENADE  
+    invWidth: 2
+    invHeight: 2
+    bigSprite: 70
+
+  - update: STR_SMOKE_BOMB
+    refNode: *DEFAULT_GRENADE  
+    throwRange: 2
+
+  - update: STR_PROXIMITY_GRENADE
+    tuPrime: 2
+    tuUnprime: 2
+    tuThrow: 55
+    throwRange: 3
+    invWidth: 1
+    invHeight: 1
+    costBuy: 1500
+
+  - update: STR_ORK_STINKBOMB
+    refNode: *DEFAULT_GRENADE  
+
+  - update: STR_ORK_GRENADE
+    refNode: *DEFAULT_GRENADE  
+
+  - update: STR_ORK_KRAKSTIKKBOMB
+    refNode: *DEFAULT_GRENADE  
+
+  - update: STR_TANKBUSTA_BOMB
+    refNode: *DEFAULT_GRENADE  
+
+
+extraSprites:
+  - type: BIGOBS.PCK
+    files:
+      70: Resources/Grenade/BLIGHT_GRENADE.png

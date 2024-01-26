@@ -1,0 +1,6 @@
+id: etweaks_grenadesoverhaul_rosigma
+name: "eTweaks: Throwable Overhaul (ROSIGMA)"
+version: "2.0"
+description: "Grenades are 1x1, explode on impact, have much smaller throw range, but are ~2 times cheaper to prime+throw. Bombs have tiny range."
+author: "EttyKitty"
+master: "40k"
