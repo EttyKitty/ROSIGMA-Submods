@@ -279,6 +279,10 @@ armors:
     storeItem: STR_TATICAL_ARMOR
     visibilityAtDark: 40
     weight: 0
+    frontArmor: 125
+    sideArmor: 115
+    rearArmor: 100
+    underArmor: 115
     damageModifier:
       - 1.0 #0
       - 1.0 #1 
@@ -307,8 +311,9 @@ armors:
     corpseGeo: STR_MK7_CORPSE
 
   - update: STR_DEV_ARMOR_UC
-    weight: 10
     refNode: *POWER_ARMOR
+    rearArmor: 105
+    weight: 10
     stats:
       tu: -2
       firing: 6
@@ -319,6 +324,7 @@ armors:
 
   - update: STR_ASS_ARMOR_UC
     refNode: *POWER_ARMOR
+    rearArmor: 110
     weight: 60
     units:
       - STR_SOLDIER
