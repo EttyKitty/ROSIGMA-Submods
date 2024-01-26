@@ -130,37 +130,37 @@ soldiers:
       - STR_CHAPTER_PURITY
     minStats:
       tu: 60 # was 50
-      stamina: 78
+      stamina: 120
       health: 40
       bravery: 50
       reactions: 60
       firing: 65
       throwing: 60
-      strength: 40
+      strength: 50
       psiStrength: 50
       psiSkill: 0
       melee: 70
     maxStats:
       tu: 72
-      stamina: 90
+      stamina: 144
       health: 50
       bravery: 80
       reactions: 85
       firing: 80
       throwing: 100
-      strength: 50
+      strength: 60
       psiStrength: 100
       psiSkill: 16
       melee: 85
     statCaps:
       tu: 115 # was 65
-      stamina: 144
+      stamina: 230
       health: 80 # was 45
       bravery: 100 # was 100
       reactions: 120 # was 60
       firing: 130 # was 100
       throwing: 130
-      strength: 80 # was 60
+      strength: 100 # was 60
       psiStrength: 100
       psiSkill: 100
       melee: 130
