@@ -105,25 +105,28 @@ soldiers:
       SOLDIER_WOUND_TIME_MULTIPLIER: 33
   
 items:
-  - &NO_HEALTH_REGEN
+  - &DEFAULT_MEDKIT
     update: AUX_ADEPTAS_MEDI_KIT
     healthRecovery: 0
+    woundRecovery: 2
   - update: AUX_ELDAR_KIT
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
   - update: AUX_MEDI_KIT
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
   - update: AUX_SERVITOR_KIT
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
   - update: STR_GUARD_MEDI_KIT
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
   - update: STR_TANITH_MEDI_KIT
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
   # *** ROSIGMA ***
   - update: AUX_MEDICAE_MEDI_KIT
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
   - update: AUX_MEDI_KIT_ADVANCED
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
+    woundRecovery: 3
   - update: AUX_MEDI_KIT_MC
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
+    woundRecovery: 3
   - update: STR_INQ_MEDI_KIT
-    refNode: *NO_HEALTH_REGEN
+    refNode: *DEFAULT_MEDKIT
