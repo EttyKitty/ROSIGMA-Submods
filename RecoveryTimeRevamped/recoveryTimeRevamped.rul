@@ -44,7 +44,7 @@ extended:
             return;
           end;
 
-          # if HP lost is more than 10% but less than 100%, recovery time = (%HPlost/2)
+          # if HP lost is more than 5% but less than 100%, recovery time = (%HPlost/2)
           muldiv totalHPlost 100 HPmax;
           div totalHPlost 2;
           set recovery_time totalHPlost;
@@ -58,11 +58,20 @@ extended:
 soldiers:
   - update: STR_OGRYN
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 80
+      SOLDIER_WOUND_TIME_MULTIPLIER: 60
+  - update: STR_OGRYN_BONEHEAD
+    tags:
+      SOLDIER_WOUND_TIME_MULTIPLIER: 60
+  - update: STR_GUARD_SQUAT
+    tags:
+      SOLDIER_WOUND_TIME_MULTIPLIER: 75
+  - update: STR_GUARD_BEASTMAN
+    tags:
+      SOLDIER_WOUND_TIME_MULTIPLIER: 88
 
   - update: STR_SOLDIER
     tags: &SPACE_MARINE_RECOVERY
-      SOLDIER_WOUND_TIME_MULTIPLIER: 66
+      SOLDIER_WOUND_TIME_MULTIPLIER: 50
   - update: STR_SOLDIER_JOAN
     tags: *SPACE_MARINE_RECOVERY
   - update: STR_GK_LV1
@@ -81,7 +90,7 @@ soldiers:
 
   - update: STR_PRIMARISLV1
     tags: &PRIMARIS_MARINE_RECOVERY
-      SOLDIER_WOUND_TIME_MULTIPLIER: 55
+      SOLDIER_WOUND_TIME_MULTIPLIER: 38
   - update: STR_PRIMARISLV2
     tags: *PRIMARIS_MARINE_RECOVERY
   - update: STR_PRIMARISLV3
