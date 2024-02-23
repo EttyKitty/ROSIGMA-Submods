@@ -76,7 +76,7 @@ research:
 
 startingBase:
   randomSoldiers:
-    STR_SOLDIER: 12
+    STR_SCOUT_SOLDIER: 12
   items:
     STR_HWP_CANNON_SHELLS: 10
     STR_AUTO_CANNON: 1
