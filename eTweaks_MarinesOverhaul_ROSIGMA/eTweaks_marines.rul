@@ -1,11 +1,79 @@
-eventScripts:
-  - delete: STR_BEGINNER_SPAWN_MARINES_SCRIPT
-  - delete: STR_BASIC_SPAWN_MARINE_SCOUTS_SCRIPT
-  - delete: STR_BASIC_SPAWN_TACTICAL_MARINES_SCRIPT
-  - delete: STR_BASIC_SPAWN_DEVASTATOR_MARINES_SCRIPT
-  - delete: STR_BASIC_SPAWN_ASSAULT_MARINES_SCRIPT
+events:
+  - delete: STR_PRIMARIS_CARE_PACKAGE
+  - delete: STR_TACTICAL_CARE_PACKAGE
+  - delete: STR_ASSAULT_CARE_PACKAGE
+  - delete: STR_DEVASTATOR_CARE_PACKAGE
+  - delete: STR_SCOUT_CARE_PACKAGE
+
+research:
+  - delete: STR_NOT_PRIMARIS
+  - delete: STR_ASSAULT_AND_TACTICAL_KIT_REQ
+  - delete: STR_SCOUT_AND_TACTICAL_KIT_REQ
+  - delete: STR_TACTICAL_KIT_REQ
+  - delete: STR_SNIPER_KIT_REQ
+  - delete: STR_ASSAULT_KIT_REQ
+  - delete: STR_SNIPER_KIT
+  - delete: STR_TACTICAL_KIT
+  - delete: STR_SCOUT_KIT
+  - delete: STR_ASSAULT_KIT
+  - delete: STR_ASSAULT_AND_TACTICAL_KIT
+  - delete: STR_SCOUT_AND_TACTICAL_KIT
+  - name: STR_ADEPTAS
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_ASSC
+    dependencies: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_ASS_ARMOR_DEP1
     requires: !remove
       - STR_NOT_PRIMARIS
+  - name: STR_DEATHWATCH
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DREADNOUGHT_MARINE
+    dependencies: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_MEDI_KIT
+    dependencies: !remove
+      - STR_NOT_PRIMARIS
+
+  - name: STR_MARINES_STRATEGY
+    unlocks: !remove
+      - STR_GUARD_SUPORT
+      - STR_GUARDSMEN
+      - STR_LIGHT_BOLTERS
+
+  - update: STR_ASSAULT
+    disables: []
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+    dependencies:
+      - STR_DEVASTATOR
+  
+  - update: STR_TATICAL
+    dependencies:
+      - STR_ASSAULT
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+    disables: []
+
+  - update: STR_DEVASTATOR
+    dependencies:
+      - STR_SCOUT
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+    disables: []
+
+  - update: STR_SCOUT
+    disables: []
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+
+  - update: STR_PRIMARIS
+    dependencies:
+      - STR_HIGHTIER_PREREQ
+    disables: []
+
 startingBase:
   randomSoldiers:
     STR_SOLDIER: 12
@@ -132,40 +200,40 @@ soldiers:
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 66
 
-  - type: STR_SCOUT_SOLDIER
+  - new: STR_SCOUT_SOLDIER
     refNode: *ASTARTES
     costBuy: 40000
     armor: STR_SCOUT_UC
     rankStrings:
       - STR_SCOUT_RANK
 
-  - type: STR_DEVASTATOR_SOLDIER
+  - new: STR_DEVASTATOR_SOLDIER
     refNode: *ASTARTES
     armor: STR_DEV_ARMOR_UC
     rankStrings:
       - STR_DEVASTATOR_RANK
 
-  - type: STR_ASSAULT_SOLDIER
+  - new: STR_ASSAULT_SOLDIER
     refNode: *ASTARTES
     armor: STR_ASS_ARMOR_UC
     rankStrings:
       - STR_ASSAULT_RANK
 
-  - type: STR_STERNGUARD_SOLDIER
+  - new: STR_STERNGUARD_SOLDIER
     refNode: *ASTARTES
     rankStrings:
       - STR_STERNGUARD_RANK
     # rankSprite: 100
     # rankBattleSprite: 100
 
-  - type: STR_VANGUARD_SOLDIER
+  - new: STR_VANGUARD_SOLDIER
     refNode: *ASTARTES
     rankStrings:
       - STR_VANGUARD_RANK
     # rankSprite: 100
     # rankBattleSprite: 100
 
-  - type: STR_APOTHECARY_SOLDIER
+  - new: STR_APOTHECARY_SOLDIER
     refNode: *ASTARTES
     armor: STR_APOT_ARMOR_UC
     rankStrings:
@@ -173,7 +241,7 @@ soldiers:
     # rankSprite: 47
     # rankBattleSprite: 25
 
-  - type: STR_TECHMARINE_SOLDIER
+  - new: STR_TECHMARINE_SOLDIER
     refNode: *ASTARTES
     armor: STR_TECH_ARMOR_UC
     rankStrings:
@@ -181,13 +249,133 @@ soldiers:
     # rankSprite: 47
     # rankBattleSprite: 25
 
-  - type: STR_CAPTAIN_SOLDIER
+  - new: STR_CAPTAIN_SOLDIER
     refNode: *ASTARTES
     armor: STR_CAPTAIN_UC
     rankStrings:
       - STR_CAPTAIN_RANK
     # rankSprite: 47
     # rankBattleSprite: 25
+
+soldierTransformation:
+  - &ASTARTES_PROMOTION
+    new: STR_DEVASTATOR_PROMOTION
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_CHAPTER_PURITY
+      - STR_PERSONAL_ARMOR
+    producedSoldierType: STR_DEVASTATOR_SOLDIER
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    producedSoldierArmor: STR_DEV_ARMOR_UC
+    cost: 5000
+    allowedSoldierTypes:
+      - STR_SCOUT_SOLDIER
+    requiredItems:
+      STR_TATICAL_ARMOR: 1
+    requiredCommendations:
+      STR_MEDAL_STATGAIN: 3
+
+  - new: STR_ASSAULT_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add
+      - STR_ASS_ARMOR
+    producedSoldierType: STR_ASSAULT_SOLDIER
+    keepSoldierArmor: true
+    allowedSoldierTypes:
+      - STR_DEVASTATOR_SOLDIER
+    requiredMinStats:
+      firing: 90
+
+  - new: STR_TACTICAL_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    producedSoldierType: STR_SOLDIER
+    allowedSoldierTypes:
+      - STR_ASSAULT_SOLDIER
+    requiredMinStats:
+      melee: 90
+
+  - new: STR_STERNGUARD_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add 
+      - STR_HONOR_ARMOR
+    producedSoldierType: STR_STERNGUARD_SOLDIER
+    allowedSoldierTypes:
+      - STR_SOLDIER_TERMINATOR
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 180
+    requiredMinStats:
+      firing: 110
+
+  - new: STR_VANGUARD_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add 
+      - STR_HONOR_ARMOR_RESEARCH
+    producedSoldierType: STR_VANGUARD_SOLDIER
+    allowedSoldierTypes:
+      - STR_SOLDIER_TERMINATOR
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 180
+    requiredMinStats:
+      melee: 110
+
+  - override: STR_PROMOTE_TERMINATOR
+    refNode: *ASTARTES_PROMOTION
+    requires: !add 
+      - STR_POWER_SUIT
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 180
+      STR_POWER_SUIT: 1
+
+  - new: STR_CAPTAIN_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add
+      - STR_CAPTAIN_SUIT
+    producedSoldierType: STR_CAPTAIN_SOLDIER
+    allowedSoldierTypes:
+      - STR_VANGUARD_SOLDIER
+      - STR_STERNGUARD_SOLDIER
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 200
+    requiredMinStats:
+      melee: 120
+      firing: 120
+      bravery: 100
+
+  - &ASTARTES_OFFICERS
+    new: STR_APOTHECARY_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add
+      - STR_APOC_BAY
+    requiresBaseFunc: [MED]
+    producedSoldierType: STR_APOTHECARY_SOLDIER
+    allowedSoldierTypes:
+      - STR_SCOUT_SOLDIER
+    transferTime: 72
+    cost: 50000
+    requiredItems: !add
+      STR_KILLPOINT_TOKEN: 120
+
+  - new: STR_TECHMARINE_PROMOTION
+    refNode: *ASTARTES_OFFICERS
+    requires: !add
+      - STR_TEC_BAYR
+    requiresBaseFunc: [TEC]
+    producedSoldierType: STR_TECHMARINE_SOLDIER
+
+  - update: STR_RESURRECT_MARINE
+    requires: !remove
+      - STR_NOT_PRIMARIS
+    requiredCommendations:
+      STR_MEDAL_SERVICE_TIME: 0
+    upperBoundAtStatCaps: true
+    rerollStats:
+      health: 1
+    allowedSoldierTypes: !add
+      - STR_TECHMARINE_SOLDIER
+      - STR_APOTHECARY_SOLDIER
+      - STR_STERNGUARD_SOLDIER
+      - STR_VANGUARD_SOLDIER
 
 armors:
   - &SCOUT_ARMOR
@@ -274,8 +462,29 @@ manufacture:
   - delete: STR_HONOR_ARMOR                #5600
   - delete: STR_APOT_ARMOR                #5700
   - delete: STR_TECH_ARMOR                #5800
+  - name: STR_CHAPTERARMY
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_CRATED_RHINO
+    requires:
+      - STR_GENERALLOCK
+  - name: STR_DREAD2_ARMOR
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DREAD3_ARMOR
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DREAD4_ARMOR
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DREAD5_ARMOR
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_FIRESTORM
+    requires: !remove
+      - STR_NOT_PRIMARIS
 
-  - name: STR_PROCESS_CORPSE_MK7
+  - new: STR_PROCESS_CORPSE_MK7
     category: STR_PERSONAL_ARMOR
     requires:
       - STR_PERSONAL_ARMOR
@@ -288,7 +497,7 @@ manufacture:
       STR_TATICAL_ARMOR: 1
 
 items:
-  - type: STR_MEDICAE_POUCH
+  - new: STR_MEDICAE_POUCH
     battleType: 6
     woundRecovery: 1
     healthRecovery: 0
@@ -307,11 +516,15 @@ items:
     tags:
       MEDKIT_TYPE: 1
 
-  - type: STR_MK7_CORPSE
+  - override: STR_MK7_CORPSE
     recover: true
     size: 1
     recoveryPoints: 5
     ignoreInBaseDefense: true
+
+  - type: STR_BIKE_ARMOR
+    requiresBuy: !remove
+      - STR_NOT_PRIMARIS
 
 ufopaedia:
   - id: STR_MEDICAE_POUCH
