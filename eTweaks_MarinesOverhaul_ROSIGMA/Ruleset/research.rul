@@ -1,0 +1,68 @@
+research:
+  - delete: STR_NOT_PRIMARIS
+  - delete: STR_ASSAULT_AND_TACTICAL_KIT_REQ
+  - delete: STR_SCOUT_AND_TACTICAL_KIT_REQ
+  - delete: STR_TACTICAL_KIT_REQ
+  - delete: STR_SNIPER_KIT_REQ
+  - delete: STR_ASSAULT_KIT_REQ
+  - delete: STR_SNIPER_KIT
+  - delete: STR_TACTICAL_KIT
+  - delete: STR_SCOUT_KIT
+  - delete: STR_ASSAULT_KIT
+  - delete: STR_ASSAULT_AND_TACTICAL_KIT
+  - delete: STR_SCOUT_AND_TACTICAL_KIT
+  - name: STR_ADEPTAS
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_ASSC
+    dependencies: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_ASS_ARMOR_DEP1
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DEATHWATCH
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DREADNOUGHT_MARINE
+    dependencies: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_MEDI_KIT
+    dependencies: !remove
+      - STR_NOT_PRIMARIS
+
+  - name: STR_MARINES_STRATEGY
+    unlocks: !remove
+      - STR_GUARD_SUPORT
+      - STR_GUARDSMEN
+      - STR_LIGHT_BOLTERS
+
+  - update: STR_ASSAULT
+    disables: []
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+    dependencies:
+      - STR_DEVASTATOR
+  
+  - update: STR_TATICAL
+    dependencies:
+      - STR_ASSAULT
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+    disables: []
+
+  - update: STR_DEVASTATOR
+    dependencies:
+      - STR_SCOUT
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+    disables: []
+
+  - update: STR_SCOUT
+    disables: []
+    unlocks: !remove
+      - STR_NOT_PRIMARIS
+
+  - update: STR_PRIMARIS
+    dependencies:
+      - STR_HIGHTIER_PREREQ
+    disables: []

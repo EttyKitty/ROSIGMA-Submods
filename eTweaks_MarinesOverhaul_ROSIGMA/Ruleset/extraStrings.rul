@@ -1,0 +1,41 @@
+extraStrings:
+  - type: en-US
+    strings:
+      STR_TATICAL_ARMOR: "MK7 Power Armor"
+      STR_MK7_CORPSE: "Damaged MK7 Power Armor"
+      STR_PROCESS_CORPSE_MK7: "Repair MK7 Power Armor"
+# ******************************************************
+# *************************** SOLDIERS ***************************
+# ******************************************************
+      STR_SCOUT_SOLDIER: "Scout Marine"
+      STR_DEVASTATOR_SOLDIER: "Devastator Marine"
+      STR_ASSAULT_SOLDIER: "Assault Marine"
+      STR_SOLDIER: "Tactical Marine"
+      STR_APOTHECARY_SOLDIER: "Apothecary Marine"
+      STR_TECHMARINE_SOLDIER: "Techmarine"
+# ******************************************************
+# *************************** RANKS ***************************
+# ******************************************************
+      STR_SCOUT_RANK: "Scout"
+      STR_DEVASTATOR_RANK: "Devastator"
+      STR_ASSAULT_RANK: "Assault"
+      STR_TACTICAL_RANK: "Tactical"
+      STR_APOTHECARY_RANK: "Apothecary"
+      STR_TECHMARINE_RANK: "Techmarine"
+# ******************************************************
+# *************************** TRANSFORMATIONS ***************************
+# ******************************************************
+      STR_DEVASTATOR_PROMOTION: "Devastator Training"
+      STR_ASSAULT_PROMOTION: "Assault Training"
+      STR_TACTICAL_PROMOTION: "Tactical Training"
+      STR_STERNGUARD_PROMOTION: "Promote to Sternguard"
+      STR_VANGUARD_PROMOTION: "Promote to Vanguard"
+      STR_PROMOTE_TERMINATOR: "Award Terminator Armor"
+      STR_CAPTAIN_PROMOTION: "Promote to Captain"
+      STR_APOTHECARY_PROMOTION: "Apothecary Training"
+      STR_TECHMARINE_PROMOTION: "Techmarine Training"
+  ########################################################## eTweaks COMMENDATIONS ##########################################################
+
+      STR_MEDAL_KILLS_TOTAL: "Executor"
+      STR_MEDAL_KILLS_TOTAL_DESC: "Awarded for Total Kills"
+      STR_MEDAL_STATGAIN: "Experienced"

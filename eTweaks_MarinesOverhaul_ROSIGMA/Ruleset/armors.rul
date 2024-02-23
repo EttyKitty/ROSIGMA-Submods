@@ -1,0 +1,77 @@
+armors:
+  - &SCOUT_ARMOR
+    update: STR_SCOUT_UC
+    visibilityAtDark: 40
+    visibilityAtDay: 40
+    stats:
+      tu: 2
+      reactions: 2
+      throwing: 2
+    units:
+      - STR_SOLDIER
+      - STR_SCOUT_SOLDIER
+      - STR_DEVASTATOR_SOLDIER
+      - STR_ASSAULT_SOLDIER
+    specialWeapon: STR_MEDICAE_POUCH   
+
+  - update: STR_SCOUTH_UC
+    refNode: *SCOUT_ARMOR
+    builtInWeapons:
+      - STR_MEDICAE_POUCH
+      - INV_NULL_3X3
+
+  - &POWER_ARMOR
+    update: STR_PERSONAL_ARMOR_UC
+    storeItem: STR_TATICAL_ARMOR
+    visibilityAtDark: 40
+    weight: 0
+    frontArmor: 125
+    sideArmor: 115
+    rearArmor: 100
+    underArmor: 115
+    damageModifier:
+      - 1.0 #0
+      - 1.0 #1 
+      - 0.8 #2
+      - 0.8 #3
+      - 1.0 #4
+      - 1.0 #5
+      - 1.0 #6
+      - 1.0 #7
+      - 0.8 #8
+      - 0.0 #9
+      - 0.8 #10
+      - 1.0 #11
+    stats:
+      strength: 20
+      health: 6
+      tu: 2
+      stamina: 6
+      bravery: 1
+      firing: 2
+      reactions: 2
+      throwing: 2
+      melee: 2
+    units:
+      - STR_SOLDIER
+    corpseGeo: STR_MK7_CORPSE
+
+  - update: STR_DEV_ARMOR_UC
+    refNode: *POWER_ARMOR
+    rearArmor: 105
+    weight: 10
+    stats:
+      tu: -2
+      firing: 6
+    units:
+      - STR_SOLDIER
+      - STR_DEVASTATOR_SOLDIER
+      - STR_ASSAULT_SOLDIER
+
+  - update: STR_ASS_ARMOR_UC
+    refNode: *POWER_ARMOR
+    rearArmor: 110
+    weight: 60
+    units:
+      - STR_SOLDIER
+      - STR_ASSAULT_SOLDIER

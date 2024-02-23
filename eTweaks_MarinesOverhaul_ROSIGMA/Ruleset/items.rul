@@ -1,0 +1,29 @@
+items:
+  - new: STR_MEDICAE_POUCH
+    battleType: 6
+    woundRecovery: 1
+    healthRecovery: 0
+    stunRecovery: 5
+    energyRecovery: 5
+    painKiller: 6
+    heal: 6
+    stimulant: 6
+    medikitTargetSelf: true
+    isConsumable: true
+    costUse:
+      time: 10
+    recover: false
+    specialUseEmptyHand: true
+    specialIconSprite: {mod: 40k, index: 100}
+    tags:
+      MEDKIT_TYPE: 1
+
+  - override: STR_MK7_CORPSE
+    recover: true
+    size: 1
+    recoveryPoints: 5
+    ignoreInBaseDefense: true
+
+  - type: STR_BIKE_ARMOR
+    requiresBuy: !remove
+      - STR_NOT_PRIMARIS

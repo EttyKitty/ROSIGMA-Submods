@@ -1,0 +1,40 @@
+manufacture:
+  - delete: STR_ASS_ARMOR_HONOR              #5601
+  - delete: STR_DEV_ARMOR                   #5300
+  - delete: STR_ASS_ARMOR                  #5400
+  - delete: STR_HONOR_ARMOR                #5600
+  - delete: STR_APOT_ARMOR                #5700
+  - delete: STR_TECH_ARMOR                #5800
+  - name: STR_CHAPTERARMY
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_CRATED_RHINO
+    requires:
+      - STR_GENERALLOCK
+  - name: STR_DREAD2_ARMOR
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DREAD3_ARMOR
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DREAD4_ARMOR
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_DREAD5_ARMOR
+    requires: !remove
+      - STR_NOT_PRIMARIS
+  - name: STR_FIRESTORM
+    requires: !remove
+      - STR_NOT_PRIMARIS
+
+  - new: STR_PROCESS_CORPSE_MK7
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_PERSONAL_ARMOR
+    time: 400
+    cost: 25000
+    requiredItems:
+      STR_MK7_CORPSE: 1
+      STR_ALIEN_ALLOYS: 10
+    producedItems:
+      STR_TATICAL_ARMOR: 1

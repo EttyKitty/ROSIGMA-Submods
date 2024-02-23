@@ -1,0 +1,119 @@
+soldierTransformation:
+  - &ASTARTES_PROMOTION
+    new: STR_DEVASTATOR_PROMOTION
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_CHAPTER_PURITY
+      - STR_PERSONAL_ARMOR
+    producedSoldierType: STR_DEVASTATOR_SOLDIER
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    producedSoldierArmor: STR_DEV_ARMOR_UC
+    cost: 5000
+    allowedSoldierTypes:
+      - STR_SCOUT_SOLDIER
+    requiredItems:
+      STR_TATICAL_ARMOR: 1
+    requiredCommendations:
+      STR_MEDAL_STATGAIN: 3
+
+  - new: STR_ASSAULT_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add
+      - STR_ASS_ARMOR
+    producedSoldierType: STR_ASSAULT_SOLDIER
+    keepSoldierArmor: true
+    allowedSoldierTypes:
+      - STR_DEVASTATOR_SOLDIER
+    requiredMinStats:
+      firing: 90
+
+  - new: STR_TACTICAL_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    producedSoldierType: STR_SOLDIER
+    allowedSoldierTypes:
+      - STR_ASSAULT_SOLDIER
+    requiredMinStats:
+      melee: 90
+
+  - new: STR_STERNGUARD_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add 
+      - STR_HONOR_ARMOR
+    producedSoldierType: STR_STERNGUARD_SOLDIER
+    allowedSoldierTypes:
+      - STR_SOLDIER_TERMINATOR
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 180
+    requiredMinStats:
+      firing: 110
+
+  - new: STR_VANGUARD_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add 
+      - STR_HONOR_ARMOR_RESEARCH
+    producedSoldierType: STR_VANGUARD_SOLDIER
+    allowedSoldierTypes:
+      - STR_SOLDIER_TERMINATOR
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 180
+    requiredMinStats:
+      melee: 110
+
+  - override: STR_PROMOTE_TERMINATOR
+    refNode: *ASTARTES_PROMOTION
+    requires: !add 
+      - STR_POWER_SUIT
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 180
+      STR_POWER_SUIT: 1
+
+  - new: STR_CAPTAIN_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add
+      - STR_CAPTAIN_SUIT
+    producedSoldierType: STR_CAPTAIN_SOLDIER
+    allowedSoldierTypes:
+      - STR_VANGUARD_SOLDIER
+      - STR_STERNGUARD_SOLDIER
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 200
+    requiredMinStats:
+      melee: 120
+      firing: 120
+      bravery: 100
+
+  - &ASTARTES_OFFICERS
+    new: STR_APOTHECARY_PROMOTION
+    refNode: *ASTARTES_PROMOTION
+    requires: !add
+      - STR_APOC_BAY
+    requiresBaseFunc: [MED]
+    producedSoldierType: STR_APOTHECARY_SOLDIER
+    allowedSoldierTypes:
+      - STR_SCOUT_SOLDIER
+    transferTime: 72
+    cost: 50000
+    requiredItems: !add
+      STR_KILLPOINT_TOKEN: 120
+
+  - new: STR_TECHMARINE_PROMOTION
+    refNode: *ASTARTES_OFFICERS
+    requires: !add
+      - STR_TEC_BAYR
+    requiresBaseFunc: [TEC]
+    producedSoldierType: STR_TECHMARINE_SOLDIER
+
+  - update: STR_RESURRECT_MARINE
+    requires: !remove
+      - STR_NOT_PRIMARIS
+    requiredCommendations:
+      STR_MEDAL_SERVICE_TIME: 0
+    upperBoundAtStatCaps: true
+    rerollStats:
+      health: 1
+    allowedSoldierTypes: !add
+      - STR_TECHMARINE_SOLDIER
+      - STR_APOTHECARY_SOLDIER
+      - STR_STERNGUARD_SOLDIER
+      - STR_VANGUARD_SOLDIER
