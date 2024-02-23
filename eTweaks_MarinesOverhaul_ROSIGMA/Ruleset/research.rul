@@ -40,6 +40,7 @@ research:
     disables: []
     unlocks: !remove
       - STR_NOT_PRIMARIS
+      - STR_ASS_ARMOR
     dependencies:
       - STR_DEVASTATOR
   
@@ -48,6 +49,7 @@ research:
       - STR_ASSAULT
     unlocks: !remove
       - STR_NOT_PRIMARIS
+      - STR_PERSONAL_ARMOR
     disables: []
 
   - update: STR_DEVASTATOR
@@ -55,6 +57,7 @@ research:
       - STR_SCOUT
     unlocks: !remove
       - STR_NOT_PRIMARIS
+      - STR_DEV_ARMOR
     disables: []
 
   - update: STR_SCOUT
